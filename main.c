@@ -21,10 +21,12 @@ int main() {
         // HTTP-Header und Body
         const char *http_response =
             "HTTP/1.1 200 OK\r\n"
-            "Content-Type: text/plain\r\n"
-            "Content-Length: 7\r\n"
+            "Content-Type: text/html; charset=utf8\r\n"
+            "Content-Length: 160\r\n"
             "\r\n"
-            "mlem :33";
+            "<html><head></head><body><h1> \r\n"
+			"mlem :3 \r\n"
+			"</h1></body></html>";
 
         send(client_fd, http_response, strlen(http_response), 0);
         close(client_fd);
