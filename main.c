@@ -22,9 +22,11 @@ int main() {
         const char *http_response =
             "HTTP/1.1 200 OK\r\n"
             "Content-Type: text/html; charset=utf8\r\n"
-            "Content-Length: 160\r\n"
+            "Content-Length: 200\r\n"
             "\r\n"
-            "<html><head></head><body><h1> \r\n"
+            "<html><head><style>\r\n"
+			"h1{padding-top: 25%;padding-left: 50%;}"
+			"</style></head><body><h1> \r\n"
 			"mlem :3 \r\n"
 			"</h1></body></html>";
 
