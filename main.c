@@ -22,9 +22,9 @@ int main() {
         const char *http_response =
             "HTTP/1.1 200 OK\r\n"
             "Content-Type: text/plain\r\n"
-            "Content-Length: 6\r\n"
+            "Content-Length: 7\r\n"
             "\r\n"
-            "mlem :3";
+            "mlem :33";
 
         send(client_fd, http_response, strlen(http_response), 0);
         close(client_fd);
