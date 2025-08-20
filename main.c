@@ -9,11 +9,11 @@ int main() {
     struct sockaddr_in addr = {0};
     addr.sin_family = AF_INET;
     addr.sin_addr.s_addr = INADDR_ANY;
-    addr.sin_port = htons(8080);
+    addr.sin_port = htons(33003);
 
     bind(server_fd, (struct sockaddr*)&addr, sizeof(addr));
     listen(server_fd, 1);
-    printf("Listening on port 8080...\n");
+    printf("Listening on port 33003...\n");
 
     while (1) {
         int client_fd = accept(server_fd, NULL, NULL);
