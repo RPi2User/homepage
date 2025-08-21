@@ -15,21 +15,21 @@ int main() {
     listen(server_fd, 1);
     printf("Listening on port 33003...\n");
 
+    const char *http_response =
+        "HTTP/1.1 200 OK\r\n"
+        "Content-Type: text/html; charset=utf8\r\n"
+        "Content-Length: 116\r\n"
+        "\r\n"
+            "<html><head><style>\r\n"
+            "h1{padding-top: 25%;padding-left: 45%;}"
+            "</style></head><body><h1> \r\n"
+            "mlem :3\r\n</h1></body></html>";
+    
+    int response_len = strlen(http_response);
     while (1) {
         int client_fd = accept(server_fd, NULL, NULL);
-
-        // HTTP-Header und Body
-        const char *http_response =
-            "HTTP/1.1 200 OK\r\n"
-            "Content-Type: text/html; charset=utf8\r\n"
-            "Content-Length: 116\r\n"
-            "\r\n"
-            "<html><head><style>\r\n"
-                        "h1{padding-top: 25%;padding-left: 45%;}"
-                        "</style></head><body><h1> \r\n"
-                        "mlem :3\r\n</h1></body></html>";
-
-        send(client_fd, http_response, strlen(http_response), 0);
+      
+        send(client_fd, http_response, response_len, 0);
         close(client_fd);
     }
     close(server_fd);
