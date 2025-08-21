@@ -25,7 +25,7 @@ int main() {
             "Content-Length: 116\r\n"
             "\r\n"
             "<html><head><style>\r\n"
-                        "h1{padding-top: 25%;padding-left: 50%;}"
+                        "h1{padding-top: 25%;padding-left: 45%;}"
                         "</style></head><body><h1> \r\n"
                         "mlem :3\r\n</h1></body></html>";
 
